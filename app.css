@@ -98,6 +98,8 @@
 body{
     background-color: antiquewhite;
     background-repeat: repeat-y;
+    height: max-content;
+    position: relative;
 }
 
 .board{
@@ -126,4 +128,24 @@ body{
     border:1px solid black;
     border-radius: 21%;
     background-color:gray;
+}
+
+#lineCursor{
+    position: absolute;
+    bottom: -275px;
+    left: 285px;
+    animation: arrowAnimate 2s infinite;
+}
+
+
+@keyframes arrowAnimate {
+    0%{
+        transform: translateX(15px);
+    }
+    50%{
+        transform: translateX(0px);
+    }
+    100%{
+        transform: translateX(15px);
+    }
 }
