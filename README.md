@@ -17,3 +17,6 @@ JavaScript Jquery
 
  ### License
 MIT
+
+### To play the game 
+[Game ](https://wijdankhaled.github.io/Mastermind/)
