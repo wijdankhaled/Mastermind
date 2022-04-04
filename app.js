@@ -5,11 +5,14 @@ let currentrow = 11;
 let possibleColors = ["blue", "green", "red", "yellow", "orange", "pink"];
 let isWon = false;
 
-let cell1color, cell2color, cell3color, cell4color;
+let linePosition = -275;
+
+let cell1Color, cell2Color, cell3Color, cell4Color;
 //possibole colore
 let colors= {
     "#3EB559": "green","FFF56D": "yellow","FF1818": "red","5463FF": "blue","FF7BB0": "pink","FF8A5C": "orange"
 }
+let lineCursor = document.getElementById('lineCursor');
 let c1 , c2 , c3 , c4 
 //  create randome colore code by choosing random decimel 
 // between 0 and 5 and floor it
@@ -64,12 +67,19 @@ $(".boardCell").click(function(){
 // submit.onclick=submitFunction ;
 function clickFunction(){
     updatePegs();
-        checkWin();
-        changeCurrentrow();
-        console.log("check if the function excute ?");
+    checkWin();
+    changeCurrentrow();
+    console.log("check if the function excute ?");
 }
 //move to the next row 
 function changeCurrentrow(){
+    
+    linePosition += 75
+    if(linePosition > 500){
+        lineCursor.style.display = "none"
+    }else{
+        lineCursor.style.bottom = `${linePosition}px`
+    }
     currentrow -= 1;
 //multiplier value to account for four rows in four cells in each row ide's
     var multiplier = 4;
@@ -99,14 +109,16 @@ function isValid(id){
  //check if the player has won
 
  function checkWin(){
-    if(code[0] === cell1color &&
-        code[1] === cell2color &&
-        code[2] === cell3color &&
-        code[3] === cell4color){
+     console.log("+->",code);
+     console.log(cell1Color , " -- " ,cell2Color , " -- " ,cell3Color , " -- " ,cell4Color);
+    if(code[0] == cell1Color &&
+        code[1] == cell2Color &&
+        code[2] == cell3Color &&
+        code[3] == cell4Color){
        isWon = true;
         alert("Congratulations, you have won!\nThe code will now be displayed.");
 
-
+        lineCursor.style.display = "none"
 
       let secretcolor1=  document.getElementById('secretcolor1');
       secretcolor1.style.backgroundColor=code[0];
@@ -128,11 +140,10 @@ function updatePegs(){
     let cell3= document.getElementById(currentBoardCells[2]);
     let cell4= document.getElementById(currentBoardCells[3]);
 
-    cell1Color = colors[cell1.style.backgroundColor];
-    cell2Color = colors[cell2.style.backgroundColor];
-    cell3Color = colors[cell3.style.backgroundColor];
-    cell4Color = colors[cell4.style.backgroundColor];
-    
+    cell1Color = cell1.style.backgroundColor;
+    cell2Color = cell2.style.backgroundColor;
+    cell3Color = cell3.style.backgroundColor;
+    cell4Color = cell4.style.backgroundColor;
 
 
     let peg1 = document.getElementById(currentPegCells[0]);
