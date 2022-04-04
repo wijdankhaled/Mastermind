@@ -1,38 +1,46 @@
 <!DOCTYPE html>
-<head>
-    <title>Mastermind</title>
-    <link rel="stylesheet" href="app.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="app.js" defer></script>
-</head>
-
-<body>
-    <h1 class="title"> Mastermind game 🟥🟧🟨🟩🟦🟪</h1>
-    <div class="content">
-        <div class="fullBoard">
-            <div class="board" id="board"></div>
-            <div class="pegs" id="pegs"></div>
-        </div>
-        <div class="other">
-            <div class="code">
-                <div class="secretColor" id="secretcolor1"></div>
-                <div class="secretColor" id="secretcolor2"></div>
-                <div class="secretColor" id="secretcolor3"></div>
-                <div class="secretColor" id="secretcolor4"></div>
+<html lang="en">
+    <head>
+        <title>Mastermind</title>
+        <link rel="stylesheet" href="app.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        
+    </head>
+    
+    <body>
+        <h1 class="title"> Mastermind game 🟥🟧🟨🟩🟦🟪</h1>
+        <div class="content">
+            <div class="fullBoard">
+                <div class="board" id="board"></div>
+                <div class="pegs" id="pegs"></div>
             </div>
-            <div class="colorBoard">
-                <div class="color" id="blue"></div>
-                <div class="color" id="green"></div>
-                <div class="color" id="red"></div>
-                <div class="color" id="yellow"></div>
-                <div class="color" id="orange"></div>
-                <div class="color" id="pink"></div>
-            </div> 
-            <div class="currentColor"></div> 
-            <div class="submit" id="check">check</div>
+            <div class="other">
+                <div class="code">
+                    <div class="secretColor" id="secretcolor1"></div>
+                    <div class="secretColor" id="secretcolor2"></div>
+                    <div class="secretColor" id="secretcolor3"></div>
+                    <div class="secretColor" id="secretcolor4"></div>
+                </div>
+                <div class="colorBoard">
+                    <div class="color" id="blue"></div>
+                    <div class="color" id="green"></div>
+                    <div class="color" id="red"></div>
+                    <div class="color" id="yellow"></div>
+                    <div class="color" id="orange"></div>
+                    <div class="color" id="pink"></div>
+                </div> 
+                <div class="currentColor"></div> 
+                <div class="submit" id="check">check</div>
+            </div>
+    
+            
         </div>
         
-    </div>
-
-
-</body>
+        <span id="lineCursor">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+              </svg>
+        </span>
+        <script src="app.js" defer></script>
+    </body>
+</html>
